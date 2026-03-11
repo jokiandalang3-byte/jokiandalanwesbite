@@ -325,11 +325,13 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
         }
 
         .portfolio-item:hover {
             box-shadow: var(--shadow-lg);
             transform: translateY(-5px);
+            border-color: var(--primary-color);
         }
 
         .portfolio-image {
@@ -380,23 +382,6 @@
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 600;
-        }
-
-        /* Kategori Akademik Khusus */
-        .portfolio-item[data-category="academic"] .portfolio-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-light);
-        }
-        
-        .portfolio-item[data-category="academic"] .portfolio-image::before {
-            content: '📚';
-            font-size: 4rem;
-        }
-
-        .portfolio-item[data-category="academic"] .portfolio-image img {
-            display: none;
         }
 
         /* Contact Section */
@@ -761,56 +746,95 @@
         </div>
 
         <div class="portfolio-grid" id="portfolioGrid">
+            
             <div class="portfolio-item" data-category="tech">
                 <div class="portfolio-image">
-                    <img src="administrasipublik.png" alt="Website Administrasi Publik" onerror="this.style.display='none'">
+                    <img src="1.png" alt="Website Penyewaan Alat Camping Honay" onerror="this.style.display='none'">
                 </div>
                 <div class="portfolio-info">
-                    <h3>Sistem Pelayanan Persuratan</h3>
-                    <p>Platform untuk pencatatan dan pengarsipan surat secara efisien.</p>
+                    <h3>Penyewaan Alat Camping Honay</h3>
+                    <p>Platform penyewaan alat camping secara online di kawasan Honay, Tana Toraja.</p>
+                    <span class="portfolio-category">E-Commerce</span>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="tech">
+                <div class="portfolio-image">
+                    <img src="2.png" alt="Website Administrasi Kelurahan Sakti" onerror="this.style.display='none'">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Administrasi Kelurahan Sakti</h3>
+                    <p>Sistem informasi untuk mendukung pendataan dan manajemen administrasi Kelurahan Sakti.</p>
                     <span class="portfolio-category">Website App</span>
                 </div>
             </div>
             
             <div class="portfolio-item" data-category="tech">
                 <div class="portfolio-image">
-                    <img src="dinas.png" alt="Website Dinas Sosial" onerror="this.style.display='none'">
+                    <img src="3.png" alt="Website Pemesanan Jus" onerror="this.style.display='none'">
                 </div>
                 <div class="portfolio-info">
-                    <h3>Layanan Bantuan Sosial</h3>
-                    <p>Akses informasi dan pengajuan bantuan masyarakat secara online.</p>
-                    <span class="portfolio-category">Website App</span>
+                    <h3>Pemesanan Jus Online</h3>
+                    <p>Website pemesanan minuman dan jus segar dengan fitur keranjang dan checkout.</p>
+                    <span class="portfolio-category">E-Commerce</span>
                 </div>
             </div>
-            
+
             <div class="portfolio-item" data-category="tech">
                 <div class="portfolio-image">
-                    <img src="administrasi.png" alt="Website Desa" onerror="this.style.display='none'">
+                    <img src="4.png" alt="Website Administrasi Pelayanan Surat Desa Bungapati" onerror="this.style.display='none'">
                 </div>
                 <div class="portfolio-info">
-                    <h3>Administrasi Desa</h3>
-                    <p>Mendukung pelayanan administratif desa yang tertib dan terintegrasi.</p>
+                    <h3>Administrasi Pelayanan Surat</h3>
+                    <p>Website pengelolaan administrasi dan pelayanan surat menyurat terpadu untuk Desa Bungapati.</p>
                     <span class="portfolio-category">Website App</span>
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="academic">
-                <div class="portfolio-image"></div>
+            <div class="portfolio-item" data-category="tech">
+                <div class="portfolio-image">
+                    <img src="5.png" alt="Website Jadwal Panen Kakao" onerror="this.style.display='none'">
+                </div>
                 <div class="portfolio-info">
-                    <h3>Skripsi Sistem Informasi</h3>
-                    <p>Pengembangan aplikasi berbasis website untuk studi kasus enterprise.</p>
+                    <h3>Prediksi Jadwal Panen Kakao</h3>
+                    <p>Sistem cerdas penentuan jadwal panen kakao menggunakan pendekatan algoritma khusus.</p>
+                    <span class="portfolio-category">Sistem Pakar / AI</span>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="tech">
+                <div class="portfolio-image">
+                    <img src="7.png" alt="Website Wisata Kebun Anggur" onerror="this.style.display='none'">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Wisata Kebun Anggur</h3>
+                    <p>Platform informasi destinasi wisata Kebun Anggur beserta sistem pemesanan tiket online.</p>
+                    <span class="portfolio-category">Pariwisata</span>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="tech">
+                <div class="portfolio-image">
+                    <img src="8.png" alt="Website Wisata Yacht Club Sorowako" onerror="this.style.display='none'">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Wisata Yacht Club Sorowako</h3>
+                    <p>Portal interaktif untuk promosi dan layanan pariwisata bahari di Yacht Club Sorowako.</p>
+                    <span class="portfolio-category">Pariwisata</span>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="academic" style="display: none;">
+                <div class="portfolio-image" style="display: flex; align-items: center; justify-content: center; background: #f8fafc;">
+                    <span style="font-size: 4rem;">📚</span>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Kumpulan Skripsi & Proposal</h3>
+                    <p>Berbagai macam proyek penelitian akademik dan skripsi Teknik Informatika yang telah diselesaikan.</p>
                     <span class="portfolio-category">Riset Akademik</span>
                 </div>
             </div>
-            
-            <div class="portfolio-item" data-category="academic">
-                <div class="portfolio-image"></div>
-                <div class="portfolio-info">
-                    <h3>Proposal E-Government</h3>
-                    <p>Perancangan arsitektur sistem layanan publik tingkat daerah.</p>
-                    <span class="portfolio-category">Riset Akademik</span>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -868,11 +892,15 @@
     </div>
 
     <script>
-        // Data gambar portfolio untuk modal
+        // Data gambar portfolio baru untuk fungsi klik gambar/modal
         const portfolioImages = [
-            { src: 'administrasipublik.png', title: 'Sistem Pelayanan Persuratan', category: 'tech' },
-            { src: 'dinas.png', title: 'Layanan Bantuan Sosial', category: 'tech' },
-            { src: 'administrasi.png', title: 'Administrasi Desa', category: 'tech' }
+            { src: '1.png', title: 'Penyewaan Alat Camping Honay', category: 'tech' },
+            { src: '2.png', title: 'Administrasi Kelurahan Sakti', category: 'tech' },
+            { src: '3.png', title: 'Pemesanan Jus Online', category: 'tech' },
+            { src: '4.png', title: 'Administrasi Pelayanan Surat Desa Bungapati', category: 'tech' },
+            { src: '5.png', title: 'Prediksi Jadwal Panen Kakao', category: 'tech' },
+            { src: '7.png', title: 'Wisata Kebun Anggur', category: 'tech' },
+            { src: '8.png', title: 'Wisata Yacht Club Sorowako', category: 'tech' }
         ];
 
         let currentImageIndex = 0;
@@ -895,6 +923,9 @@
                     }
                 });
             });
+            
+            // Inisialisasi tampilan awal portofolio
+            filterPortfolio('all');
         });
 
         function openModal(index) {
@@ -927,8 +958,11 @@
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.tab-button');
             
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            // Update status button active
+            if(event && event.target) {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
             
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {

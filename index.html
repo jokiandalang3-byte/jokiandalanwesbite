@@ -3,37 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joki Andalang - Jasa Aplikasi Berbasis Website</title>
+    <title>Joki Andalang - Solusi IT & Akademik Cerdas</title>
 
     <style>
-        /* --- CSS UTAMA: THEMA GELAP MODEREN 2026 YANG DITINGKATKAN --- */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        /* --- CSS UTAMA: THEMA AI / CYBER TECH 2026 --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
         :root {
-            /* Palette 2026 Sinematik & Neon */
-            --primary-color: #0ea5e9; 
-            --primary-hover: #38bdf8;
-            --secondary-color: #a855f7; /* Ungu neon untuk aksen futuristik */
-            --accent-color: #f87171; /* Merah muda neon halus untuk kontras */
+            /* Palette AI Modern (Cyan & Deep Violet) */
+            --primary-color: #06b6d4; /* Cyan futuristic */
+            --primary-hover: #22d3ee;
+            --secondary-color: #8b5cf6; /* Violet */
+            --accent-color: #f43f5e; /* Rose / Red Accent */
             
-            /* Latar Belakang Gelap Pekat (Deeper Slate/Navy) */
-            --bg-main: #020617; /* Slate 950 - Sangat Gelap */
-            --bg-card: rgba(13, 22, 38, 0.7); /* Glassmorphism lebih dalam */
-            --bg-glass: rgba(10, 15, 30, 0.85); /* Header transparan */
+            /* Deep Dark Backgrounds */
+            --bg-main: #030712; /* Hampir hitam pekat (Deep Space) */
+            --bg-card: rgba(15, 23, 42, 0.6); /* Glass effect */
+            --bg-glass: rgba(3, 7, 18, 0.85); /* Header transparan */
             
-            /* Teks & Konten */
+            /* Typography */
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --text-neon: #a5f3fc; /* Biru langit neon untuk penekanan */
+            --text-neon: #67e8f9;
             
-            /* Border & Bayangan Neon */
-            --border-color: rgba(255, 255, 255, 0.05);
-            --border-hover: rgba(14, 165, 233, 0.4);
-            
-            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 15px rgba(14, 165, 233, 0.2);
-            --shadow-glow-strong: 0 0 25px rgba(14, 165, 233, 0.3);
-            --shadow-glow-secondary: 0 0 20px rgba(168, 85, 247, 0.3);
+            /* Glow Effects */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow-glow-cyan: 0 0 25px rgba(6, 182, 212, 0.25);
+            --shadow-glow-violet: 0 0 25px rgba(139, 92, 246, 0.25);
         }
 
         * {
@@ -45,27 +41,28 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-main);
-            /* Pola Latar Belakang Halus & Dinamis (Grid + Radial Glow) */
+            /* Latar Belakang Grid AI & Cahaya Orb */
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.08), transparent 25%),
-                radial-gradient(circle at 80% 60%, rgba(14, 165, 233, 0.08), transparent 25%),
-                linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+                radial-gradient(circle at 15% 30%, rgba(139, 92, 246, 0.12), transparent 30%),
+                radial-gradient(circle at 85% 60%, rgba(6, 182, 212, 0.12), transparent 30%),
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.7;
             overflow-x: hidden;
-            letter-spacing: -0.2px;
+            scroll-behavior: smooth;
         }
 
-        /* Header (Glassmorphism Neon) */
+        /* Navigasi Glassmorphism */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             background: var(--bg-glass);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
             padding: 1rem 0;
@@ -82,27 +79,25 @@
         }
 
         .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 800;
             color: var(--text-main);
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            letter-spacing: -1px;
-            text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+            letter-spacing: -0.5px;
         }
 
         .logo-image {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.5));
-            border-radius: 8px;
+            filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: clamp(1rem, 2vw, 2.5rem);
             list-style: none;
         }
 
@@ -117,338 +112,269 @@
 
         .nav-links a:hover {
             color: var(--text-main);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
+        /* Hero Section (Vertical & AI Vibe) */
         .hero {
-            margin-top: 70px;
-            padding: 10rem 2rem 8rem;
+            margin-top: 80px;
+            padding: clamp(6rem, 15vw, 12rem) 1.5rem clamp(4rem, 10vw, 8rem);
             text-align: center;
             position: relative;
-            background: none;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% -20%, rgba(139, 92, 246, 0.25), transparent 60%),
-                       radial-gradient(circle at 50% 120%, rgba(14, 165, 233, 0.25), transparent 60%);
-            z-index: -1;
-            opacity: 0.8;
-        }
-
-        /* Container Baru untuk Tata Letak Vertikal Gambar & Judul */
         .hero-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2.5rem; /* Jarak antara logo dan judul */
-            margin-bottom: 3.5rem; /* Jarak antara judul dan teks p */
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            width: 100%;
         }
 
-        /* Gaya untuk Gambar Logo Besar yang Baru */
+        /* Animasi Melayang untuk Logo */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
         .hero-logo-large {
-            height: 250px; /* Ukuran besar sesuai keinginan */
+            height: clamp(120px, 20vw, 220px);
             width: auto;
+            max-width: 90%;
             object-fit: contain;
-            border-radius: 20px;
-            
-            /* Efek glowing drop-shadow yang mengikuti bentuk logo transparan */
-            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.6));
-            transition: all 0.4s ease;
+            /* Efek glowing tebal untuk PNG transparan */
+            filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 10px rgba(6, 182, 212, 0.4));
+            animation: float 6s ease-in-out infinite;
         }
 
-        .hero-logo-large:hover {
-            transform: scale(1.03);
-            filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.8));
-        }
-
-        /* Gaya untuk Judul Gradient */
         .hero-title {
-            font-size: 3.8rem;
-            line-height: 1.15;
-            font-weight: 800;
-            letter-spacing: -2.5px;
-            text-shadow: none; /* Hapus bayangan teks putih lama */
-            
-            /* Terapkan gradient ke seluruh teks judul */
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
 
+        /* Copywriting Baru - Persuasif & Profesional */
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 3rem;
-            animation: fadeInUp 1s ease 0.1s backwards;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
             line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .highlight-text {
+            color: var(--text-neon);
+            font-weight: 600;
         }
 
         .service-badges {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 4rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
+            margin-bottom: 3.5rem;
         }
 
         .badge {
-            padding: 0.7rem 1.8rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(6, 182, 212, 0.3);
             border-radius: 50px;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.9rem;
-            backdrop-filter: blur(6px);
+            color: var(--text-neon);
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            letter-spacing: 0.5px;
+            box-shadow: inset 0 0 10px rgba(6, 182, 212, 0.1);
         }
         
         .badge:hover {
-            border-color: var(--primary-color);
-            background: rgba(14, 165, 233, 0.15);
-            box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
-            transform: translateY(-2px);
+            background: rgba(6, 182, 212, 0.15);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+            transform: translateY(-3px);
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1.1rem 3rem;
-            background: linear-gradient(135deg, var(--primary-color), #0284c7);
+            padding: clamp(1rem, 2vw, 1.2rem) clamp(2rem, 4vw, 3.5rem);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 700;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeInUp 1s ease 0.3s backwards;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.6), 0 0 15px rgba(14, 165, 233, 0.4);
-            background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.6), inset 0 0 15px rgba(255,255,255,0.3);
+            background: linear-gradient(135deg, var(--primary-hover), var(--secondary-color));
         }
 
         /* Stats Section */
         .stats {
-            max-width: 1050px;
+            max-width: 1000px;
             margin: 0 auto 5rem;
-            padding: 3.5rem 2.5rem;
+            width: 90%;
+            padding: clamp(2rem, 5vw, 3.5rem) 1.5rem;
             background: var(--bg-card);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            box-shadow: var(--shadow-glass), var(--shadow-glow);
-            transform: translateY(-50px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 24px;
+            box-shadow: var(--shadow-glow-violet);
             position: relative;
-            overflow: hidden;
-        }
-
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-            opacity: 0.6;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
             text-align: center;
         }
 
         .stat-item h3 {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #fff, var(--text-neon), var(--primary-color));
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            background: linear-gradient(135deg, #fff, var(--primary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.3rem;
-            font-weight: 800;
-            letter-spacing: -1.5px;
+            font-weight: 900;
+            margin-bottom: 0.2rem;
         }
 
         .stat-item p {
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
             color: var(--text-muted);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
         }
 
-        /* Titles */
+        /* Section Titles */
         .section-title {
             text-align: center;
-            font-size: 2.4rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             color: var(--text-main);
-            margin-bottom: 0.8rem;
-            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
             letter-spacing: -1px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 5rem;
-            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem;
         }
 
-        /* Services Section */
+        /* Services Grid */
         .services {
             max-width: 1200px;
-            margin: 0 auto 5rem;
-            padding: 2rem;
-        }
-
-        .service-category {
-            margin-bottom: 6rem;
-        }
-
-        .category-title {
-            font-size: 1.6rem;
-            color: var(--text-main);
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .category-title::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--border-color), transparent);
+            margin: 0 auto 6rem;
+            padding: 0 1.5rem;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         .service-card {
             background: var(--bg-card);
             backdrop-filter: blur(12px);
-            padding: 3rem 2.5rem;
+            padding: 3rem 2rem;
             border-radius: 20px;
             border: 1px solid var(--border-color);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-glass);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.1), transparent 60%),
-                       radial-gradient(circle at 0% 100%, rgba(14, 165, 233, 0.1), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--border-hover);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), var(--shadow-glow-strong);
-        }
-
-        .service-card:hover::after {
+        /* AI Glowing effect on hover */
+        .service-card::after {
             content: '';
             position: absolute;
             inset: 0;
             border-radius: 20px;
-            padding: 1px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), transparent);
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary-color), transparent, var(--secondary-color));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
-            opacity: 0.6;
-            animation: borderGlow 2s linear infinite;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
-        .service-card:hover::before {
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), var(--shadow-glow-cyan);
+        }
+
+        .service-card:hover::after {
             opacity: 1;
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-            filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.5));
         }
 
         .service-card h3 {
             color: var(--text-main);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             font-size: 1.4rem;
-            position: relative;
-            z-index: 1;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .service-card p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-            line-height: 1.8;
+            line-height: 1.7;
+            flex-grow: 1;
         }
 
         .service-tag {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background: rgba(14, 165, 233, 0.12);
-            color: var(--text-neon);
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c084fc;
             border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(14, 165, 233, 0.25);
-            position: relative;
-            z-index: 1;
-            letter-spacing: 0.5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid rgba(139, 92, 246, 0.3);
         }
 
         /* Portfolio Section */
         .portfolio {
-            background: rgba(10, 15, 30, 0.4);
-            padding: 7rem 2rem;
+            background: rgba(3, 7, 18, 0.6);
+            padding: 6rem 1.5rem;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
@@ -456,401 +382,201 @@
         .portfolio-tabs {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
-            margin-bottom: 5rem;
+            gap: 1rem;
+            margin-bottom: 4rem;
             flex-wrap: wrap;
         }
 
         .tab-button {
-            padding: 0.7rem 2rem;
-            background: transparent;
+            padding: 0.6rem 1.8rem;
+            background: rgba(255,255,255,0.02);
             border: 1px solid var(--border-color);
             border-radius: 50px;
             color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(6px);
-            letter-spacing: 0.5px;
         }
 
-        .tab-button:hover {
-            color: var(--text-main);
-            border-color: rgba(255,255,255,0.25);
-            background: rgba(255,255,255,0.02);
-        }
-
-        .tab-button.active {
+        .tab-button.active, .tab-button:hover {
             background: var(--primary-color);
-            color: white;
+            color: #000;
             border-color: var(--primary-color);
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
         }
 
         .portfolio-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
         .portfolio-item {
             background: var(--bg-card);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
             cursor: pointer;
-            box-shadow: var(--shadow-glass);
         }
 
         .portfolio-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: var(--border-neon-secondary);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), var(--shadow-glow-secondary);
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-glow-cyan);
         }
 
         .portfolio-image {
             width: 100%;
-            height: 260px;
-            background: #010409;
-            position: relative;
+            height: 220px;
             overflow: hidden;
-        }
-
-        .portfolio-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent, rgba(2, 6, 23, 0.9));
-            opacity: 0.6;
-            transition: opacity 0.4s;
-        }
-
-        .portfolio-item:hover .portfolio-image::after {
-            opacity: 0.3;
+            position: relative;
         }
 
         .portfolio-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.6s ease;
         }
 
         .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.12);
+            transform: scale(1.1);
         }
 
         .portfolio-info {
-            padding: 2rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 1.5rem;
         }
 
         .portfolio-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: var(--text-main);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-            font-weight: 600;
         }
 
         .portfolio-info p {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.8rem;
-            flex-grow: 1;
-            line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
-        .portfolio-category {
-            align-self: flex-start;
-            padding: 0.5rem 1.2rem;
-            background: rgba(168, 85, 247, 0.1);
-            color: var(--secondary-hover);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            letter-spacing: 0.5px;
-        }
-
-        /* Contact Section */
+        /* Contact Form */
         .contact {
-            max-width: 850px;
-            margin: 7rem auto;
-            padding: 0 2rem;
+            max-width: 800px;
+            margin: 6rem auto;
+            padding: 0 1.5rem;
         }
 
         .contact-container {
             background: var(--bg-card);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 4rem;
-            box-shadow: var(--shadow-glass);
-            position: relative;
-        }
-
-        .contact-container::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-            opacity: 0.5;
+            border-radius: 24px;
+            padding: clamp(2rem, 5vw, 4rem);
+            box-shadow: var(--shadow-glow-violet);
         }
 
         .contact-methods {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 3.5rem;
-            padding-bottom: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid var(--border-color);
         }
 
         .contact-button {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 0.9rem 2rem;
-            background: rgba(255, 255, 255, 0.02);
+            gap: 0.8rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255,255,255,0.03);
             color: var(--text-main);
             text-decoration: none;
-            border-radius: 10px;
-            font-weight: 500;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
 
         .contact-button:hover {
             border-color: var(--primary-color);
-            background: rgba(14, 165, 233, 0.1);
+            background: rgba(6, 182, 212, 0.1);
             color: var(--text-neon);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
         }
 
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
+        .form-group { margin-bottom: 1.5rem; }
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 500;
+            margin-bottom: 0.5rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
             width: 100%;
-            padding: 1.2rem 1.5rem;
+            padding: 1rem 1.2rem;
+            background: rgba(0,0,0,0.3);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            font-size: 1rem;
+            color: #fff;
             font-family: inherit;
-            color: var(--text-main);
-            background: rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(148, 163, 184, 0.4);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus {
             outline: none;
-            border-color: var(--secondary-color);
-            background: rgba(168, 85, 247, 0.04);
-            box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.1);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
         }
 
         .send-button {
             width: 100%;
+            padding: 1.2rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 1.3rem;
             border: none;
             border-radius: 10px;
-            font-weight: 700;
-            font-size: 1rem;
+            font-weight: 800;
             letter-spacing: 1px;
-            text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .send-button:hover {
-            background: linear-gradient(135deg, var(--primary-hover), var(--secondary-hover));
-            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.4), var(--shadow-glow-secondary);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(1, 4, 9, 0.95);
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        footer p {
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        /* Modal / Lightbox */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            background-color: rgba(1, 4, 9, 0.96);
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .modal.active {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .modal-content {
-            position: relative;
-            max-width: 1100px;
-            width: 100%;
-        }
-
-        .modal-content img {
-            width: 100%;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 16px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 30px rgba(14, 165, 233, 0.1);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -60px;
-            right: 0;
-            color: var(--text-muted);
-            font-size: 2.8rem;
-            cursor: pointer;
-            line-height: 1;
-            transition: color 0.3s ease;
-        }
-        
-        .modal-close:hover { color: white; }
-
-        .modal-caption {
-            text-align: center;
-            color: var(--text-main);
-            padding-top: 2rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(6px);
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.08);
             transition: all 0.3s;
         }
 
-        .modal-nav:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-            transform: translateY(-50%) scale(1.1);
+        .send-button:hover {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+            transform: translateY(-2px);
         }
 
-        .modal-prev { left: -80px; }
-        .modal-next { right: -80px; }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes borderGlow {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 0.9; }
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            background: rgba(3, 7, 18, 0.9);
         }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-logo-large { height: 180px; }
-            .hero-title { font-size: 3rem; }
-            .modal-prev { left: 10px; }
-            .modal-next { right: 10px; }
-            .modal-close { right: 10px; top: -50px; }
+        /* Modal Resposive adjustments */
+        .modal-content img {
+            border-radius: 12px;
+            max-height: 70vh;
         }
-
+        
         @media (max-width: 768px) {
-            .hero { padding: 8rem 1.5rem 6rem; }
-            .hero-logo-large { height: 140px; }
-            .hero-title { font-size: 2.6rem; letter-spacing: -1.5px; }
-            .stats {
-                transform: translateY(0);
-                margin: 2rem 1.5rem 4rem;
-                padding: 3rem 1.5rem;
-            }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-            .stat-item h3 { font-size: 2.5rem; }
-            nav {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            .nav-links {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .service-card { padding: 2.5rem 2rem; }
-            .contact-container { padding: 2.5rem 2rem; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-logo-large { height: 100px; }
-            .hero-title { font-size: 2.1rem; letter-spacing: -1px; }
-            .hero-content { gap: 1.5rem; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .contact-methods { flex-direction: column; gap: 1rem; }
-            .contact-button { justify-content: center; width: 100%; }
+            nav { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .modal-prev { left: 5px; }
+            .modal-next { right: 5px; }
+            .modal-close { top: -45px; right: 5px; }
+            .modal-nav { width: 45px; height: 45px; font-size: 1.2rem; }
+            .contact-button { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -875,186 +601,149 @@
             <img src="jokiandalang.png" alt="Logo Brand Joki Andalang" class="hero-logo-large">
 
             <h1 class="hero-title">
-                Jasa Aplikasi Website
-                <br>
-                & Skripsi Informatika
+                Jasa Aplikasi Website<br>& Skripsi Informatika
             </h1>
         </div>
 
-        <p>Solusi profesional, jernih (HD), dan terpercaya untuk kebutuhan pengembangan teknologi dan akademik Anda.</p>
+        <p>Wujudkan sistem impian dan selesaikan tugas akhir Anda tanpa stres. Kami memadukan <span class="highlight-text">keahlian IT profesional</span> dengan <span class="highlight-text">teknologi cerdas modern</span> untuk menghasilkan karya yang cepat, presisi, dan dijamin memuaskan. Fokus saja pada tujuan Anda, biarkan kami yang mengeksekusi kerumitannya.</p>
+        
         <div class="service-badges">
-            <span class="badge">🌐 Web Development</span>
-            <span class="badge">📄 Proposal & Skripsi</span>
-            <span class="badge">🤖 Integrasi AI & Sistem Pakar</span>
+            <span class="badge">🚀 Eksekusi Super Cepat</span>
+            <span class="badge">💎 Kualitas Kode Standar Industri</span>
+            <span class="badge">🧠 Solusi Berbasis AI & Sistem Pakar</span>
         </div>
-        <a href="#kontak" class="cta-button">Konsultasi Sekarang</a>
+        <a href="#kontak" class="cta-button">Mulai Konsultasi Gratis</a>
     </section>
 
     <div class="stats">
         <div class="stats-grid">
             <div class="stat-item">
                 <h3>150+</h3>
-                <p>Proyek Selesai</p>
+                <p>Sistem Sukses Rilis</p>
             </div>
             <div class="stat-item">
-                <h3>120+</h3>
-                <p>Klien Puas</p>
+                <h3>100%</h3>
+                <p>Bebas Plagiasi</p>
             </div>
             <div class="stat-item">
-                <h3>98%</h3>
-                <p>Tingkat Kepuasan</p>
+                <h3>99%</h3>
+                <p>Klien Lulus & Puas</p>
             </div>
             <div class="stat-item">
                 <h3>24/7</h3>
-                <p>Dukungan Penuh</p>
+                <p>Support & Revisi</p>
             </div>
         </div>
     </div>
 
     <section id="layanan" class="services">
-        <h2 class="section-title">Layanan Kami</h2>
-        <p class="section-subtitle">Solusi digital terkini yang disesuaikan dengan standar 2026</p>
+        <h2 class="section-title">Layanan Eksekutif Kami</h2>
+        <p class="section-subtitle">Didukung algoritma dan pola pikir pengembangan modern untuk memastikan produk IT Anda stabil, aman, dan memukau.</p>
 
-        <div class="service-category">
-            <h3 class="category-title">💻 Teknologi & Aplikasi</h3>
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Company Profile</h3>
-                    <p>Website profesional untuk menampilkan identitas bisnis Anda dengan desain yang responsif dan estetik.</p>
-                    <span class="service-tag">Responsive & Modern</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛒</div>
-                    <h3>E-Commerce</h3>
-                    <p>Toko online lengkap yang mendukung pengelolaan produk dan transaksi dengan mudah dan aman.</p>
-                    <span class="service-tag">High Performance</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>Sistem Informasi</h3>
-                    <p>Aplikasi pencatatan, manajemen IoT, atau administrasi berbasis web untuk instansi dengan keamanan tinggi.</p>
-                    <span class="service-tag">Data Management</span>
-                </div>
+        <h3 style="color: #fff; margin-bottom: 1.5rem; text-align: center; font-size: 1.5rem;">💻 Pengembangan Aplikasi & Web</h3>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Company Profile Interaktif</h3>
+                <p>Tingkatkan kredibilitas bisnis dengan website responsif berdesain premium yang memikat mata pelanggan Anda sejak detik pertama.</p>
+                <span class="service-tag">UI/UX Modern</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛒</div>
+                <h3>Platform E-Commerce</h3>
+                <p>Sistem toko online cerdas dengan manajemen inventaris otomatis dan gerbang pembayaran terintegrasi penuh.</p>
+                <span class="service-tag">High Performance</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Sistem Informasi Terpadu</h3>
+                <p>Aplikasi pengelolaan data dinamis, administrasi instansi, dan integrasi IoT dengan tingkat keamanan data yang solid.</p>
+                <span class="service-tag">Secure Database</span>
             </div>
         </div>
 
-        <div class="service-category">
-            <h3 class="category-title">📚 Layanan Akademik</h3>
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">📖</div>
-                    <h3>Bimbingan Skripsi</h3>
-                    <p>Pendampingan penyusunan skripsi Teknik Informatika dari awal hingga siap sidang (Joki Andalang).</p>
-                    <span class="service-tag">Bimbingan Penuh</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>Proposal Proyek</h3>
-                    <p>Penyusunan proposal sistem informasi dan riset IT yang terstruktur dan memenuhi standar akademik.</p>
-                    <span class="service-tag">Standar Akademik</span>
-                </div>
+        <h3 style="color: #fff; margin-bottom: 1.5rem; text-align: center; font-size: 1.5rem;">📚 Solusi Riset & Akademik</h3>
+        <div class="service-grid" style="justify-content: center; display: flex; flex-wrap: wrap;">
+            <div class="service-card" style="flex: 1; min-width: 280px; max-width: 500px;">
+                <div class="service-icon">🎓</div>
+                <h3>Bimbingan Skripsi IT Premium</h3>
+                <p>Pendampingan eksklusif pembuatan skripsi dan program dari nol. Mulai dari Algoritma Sistem Pakar, Machine Learning, hingga Web App kompleks.</p>
+                <span class="service-tag">Garansi Lulus</span>
+            </div>
+            <div class="service-card" style="flex: 1; min-width: 280px; max-width: 500px;">
+                <div class="service-icon">📑</div>
+                <h3>Penyusunan Proposal IT</h3>
+                <p>Pembuatan proposal rancang bangun sistem yang sistematis, menggunakan referensi jurnal terbaru, dan mudah dipahami dosen penguji.</p>
+                <span class="service-tag">Riset Mendalam</span>
             </div>
         </div>
     </section>
 
     <section id="portfolio" class="portfolio">
-        <h2 class="section-title">Portfolio Kami</h2>
-        <p class="section-subtitle">Hasil karya HD dan profesional yang telah kami kembangkan</p>
+        <h2 class="section-title">Showcase Produk</h2>
+        <p class="section-subtitle">Beberapa mahakarya digital yang telah kami bangun dengan standar performa dan visual tingkat tinggi.</p>
         
         <div class="portfolio-tabs">
-            <button class="tab-button active" onclick="filterPortfolio('all')">Semua Proyek</button>
-            <button class="tab-button" onclick="filterPortfolio('tech')">Teknologi & Web</button>
-            <button class="tab-button" onclick="filterPortfolio('academic')">Riset Akademik</button>
+            <button class="tab-button active" onclick="filterPortfolio('all')">Semua Karya</button>
+            <button class="tab-button" onclick="filterPortfolio('tech')">Web App & Sistem</button>
+            <button class="tab-button" onclick="filterPortfolio('academic')">Proyek Skripsi</button>
         </div>
 
         <div class="portfolio-grid" id="portfolioGrid">
             
             <div class="portfolio-item" data-category="tech">
-                <div class="portfolio-image">
-                    <img src="1.png" alt="Website Penyewaan Alat Camping Honay" onerror="this.style.display='none'">
-                </div>
+                <div class="portfolio-image"><img src="1.png" alt="Website Penyewaan Alat Camping Honay" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
-                    <h3>Penyewaan Alat Camping Honay</h3>
-                    <p>Platform penyewaan alat camping secara online di kawasan Honay, Tana Toraja.</p>
-                    <span class="portfolio-category">E-Commerce</span>
+                    <h3>Sistem Reservasi Alat Camping</h3>
+                    <p>Platform E-Commerce responsif untuk penyewaan logistik wisata Honay, Tana Toraja.</p>
                 </div>
             </div>
             
             <div class="portfolio-item" data-category="tech">
-                <div class="portfolio-image">
-                    <img src="2.png" alt="Website Administrasi Kelurahan Sakti" onerror="this.style.display='none'">
-                </div>
+                <div class="portfolio-image"><img src="2.png" alt="Website Administrasi Kelurahan Sakti" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
-                    <h3>Administrasi Kelurahan Sakti</h3>
-                    <p>Sistem informasi untuk mendukung pendataan dan manajemen administrasi tingkat kelurahan.</p>
-                    <span class="portfolio-category">Website App</span>
+                    <h3>Sistem Manajemen Administrasi</h3>
+                    <p>Digitalisasi pendataan dan pelayanan birokrasi Kelurahan Sakti yang terenkripsi.</p>
                 </div>
             </div>
             
             <div class="portfolio-item" data-category="tech">
-                <div class="portfolio-image">
-                    <img src="3.png" alt="Website Pemesanan Jus" onerror="this.style.display='none'">
-                </div>
+                <div class="portfolio-image"><img src="3.png" alt="Website Pemesanan Jus" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
-                    <h3>Pemesanan Jus Online</h3>
-                    <p>Website pemesanan minuman dan jus segar dengan fitur keranjang dan proses checkout.</p>
-                    <span class="portfolio-category">E-Commerce</span>
+                    <h3>Aplikasi Pemesanan F&B</h3>
+                    <p>Platform pemesanan minuman online dengan antarmuka dinamis dan checkout instan.</p>
                 </div>
             </div>
 
             <div class="portfolio-item" data-category="tech">
-                <div class="portfolio-image">
-                    <img src="4.png" alt="Website Administrasi Pelayanan Surat Desa Bungapati" onerror="this.style.display='none'">
-                </div>
+                <div class="portfolio-image"><img src="4.png" alt="Website Administrasi Pelayanan Surat Desa Bungapati" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
-                    <h3>Administrasi Pelayanan Surat</h3>
-                    <p>Website pengelolaan administrasi dan pelayanan surat menyurat terpadu untuk Desa Bungapati.</p>
-                    <span class="portfolio-category">Website App</span>
+                    <h3>Portal Pelayanan Desa E-Surat</h3>
+                    <p>Otomatisasi pembuatan dan pengarsipan surat menyurat resmi Desa Bungapati.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="academic">
+                <div class="portfolio-image"><img src="5.png" alt="Website Jadwal Panen Kakao" onerror="this.style.display='none'"></div>
+                <div class="portfolio-info">
+                    <h3>AI Prediksi Panen Kakao</h3>
+                    <p>Sistem cerdas penentu jadwal panen berbasis komputasi algoritma dan variabel lingkungan.</p>
                 </div>
             </div>
 
             <div class="portfolio-item" data-category="tech">
-                <div class="portfolio-image">
-                    <img src="5.png" alt="Website Jadwal Panen Kakao" onerror="this.style.display='none'">
-                </div>
+                <div class="portfolio-image"><img src="7.png" alt="Website Wisata Kebun Anggur" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
-                    <h3>Prediksi Jadwal Panen Kakao</h3>
-                    <p>Sistem cerdas penentuan jadwal panen kakao menggunakan pendekatan algoritma khusus.</p>
-                    <span class="portfolio-category">Sistem Pakar / AI</span>
+                    <h3>Portal Pariwisata Interaktif</h3>
+                    <p>Website booking tiket dan eksplorasi virtual destinasi Kebun Anggur.</p>
                 </div>
             </div>
 
             <div class="portfolio-item" data-category="tech">
-                <div class="portfolio-image">
-                    <img src="7.png" alt="Website Wisata Kebun Anggur" onerror="this.style.display='none'">
-                </div>
+                <div class="portfolio-image"><img src="8.png" alt="Website Wisata Yacht Club Sorowako" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
-                    <h3>Wisata Kebun Anggur</h3>
-                    <p>Platform informasi destinasi wisata Kebun Anggur beserta sistem pemesanan tiket online.</p>
-                    <span class="portfolio-category">Pariwisata</span>
-                </div>
-            </div>
-
-            <div class="portfolio-item" data-category="tech">
-                <div class="portfolio-image">
-                    <img src="8.png" alt="Website Wisata Yacht Club Sorowako" onerror="this.style.display='none'">
-                </div>
-                <div class="portfolio-info">
-                    <h3>Wisata Yacht Club Sorowako</h3>
-                    <p>Portal interaktif untuk promosi dan layanan pariwisata bahari di Yacht Club Sorowako.</p>
-                    <span class="portfolio-category">Pariwisata</span>
-                </div>
-            </div>
-
-            <div class="portfolio-item" data-category="academic" style="display: none;">
-                <div class="portfolio-image" style="display: flex; align-items: center; justify-content: center; background: rgba(1, 4, 9, 0.4);">
-                    <span style="font-size: 4rem; filter: drop-shadow(0 0 10px rgba(255,255,255,0.25));">📚</span>
-                </div>
-                <div class="portfolio-info">
-                    <h3>Kumpulan Skripsi & Proposal</h3>
-                    <p>Berbagai macam proyek penelitian akademik dan skripsi Teknik Informatika yang telah diselesaikan.</p>
-                    <span class="portfolio-category">Riset Akademik</span>
+                    <h3>Company Profile Yacht Club</h3>
+                    <p>Katalog layanan bahari eksklusif dengan desain UI/UX sinematik untuk Sorowako.</p>
                 </div>
             </div>
 
@@ -1062,117 +751,75 @@
     </section>
 
     <section id="kontak" class="contact">
-        <h2 class="section-title">Hubungi Kami</h2>
-        <p class="section-subtitle">Mari diskusikan kebutuhan teknologi dan proyek Anda bersama kami</p>
+        <h2 class="section-title">Siap Memulai Proyek Anda?</h2>
+        <p class="section-subtitle">Jangan tunda lagi. Ceritakan kendala tugas atau ide bisnis Anda, dan kami akan berikan solusi teknis terbaiknya hari ini juga.</p>
 
         <div class="contact-container">
             <div class="contact-methods">
                 <a href="https://wa.me/6282396224810" class="contact-button" target="_blank">
-                    <span style="color: #25D366; font-size: 1.3rem;">📱</span> WhatsApp
+                    <span style="color: #22c55e; font-size: 1.2rem;">💬</span> Chat WhatsApp
                 </a>
                 <a href="mailto:jokiandalang3@gmail.com" class="contact-button">
-                    <span style="color: #ea4335; font-size: 1.3rem;">✉️</span> Email Kami
+                    <span style="color: #ef4444; font-size: 1.2rem;">✉️</span> Kirim Email
                 </a>
                 <a href="https://www.instagram.com/jokiandalang" class="contact-button" target="_blank">
-                    <span style="color: #E1306C; font-size: 1.3rem;">📸</span> Instagram
+                    <span style="color: #db2777; font-size: 1.2rem;">📸</span> DM Instagram
                 </a>
             </div>
 
-            <div class="email-form">
-                <form id="emailForm">
-                    <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Subjek Permintaan</label>
-                        <input type="text" id="subjek" placeholder="Contoh: Web Development / Bimbingan Skripsi" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Detail Kebutuhan Anda</label>
-                        <textarea id="pesan" placeholder="Deskripsikan proyek atau kebutuhan Anda secara detail..." required></textarea>
-                    </div>
-                    <button type="submit" class="send-button">Kirim Permintaan Konsultasi</button>
-                </form>
-                <div class="message" id="statusMessage"></div>
-            </div>
+            <form id="emailForm">
+                <div class="form-group">
+                    <label>Nama Lengkap Anda</label>
+                    <input type="text" id="nama" placeholder="Ketik nama Anda di sini..." required>
+                </div>
+                <div class="form-group">
+                    <label>Topik Diskusi</label>
+                    <input type="text" id="subjek" placeholder="Contoh: Pembuatan Web Toko / Joki Skripsi Sistem Pakar" required>
+                </div>
+                <div class="form-group">
+                    <label>Ceritakan Detailnya</label>
+                    <textarea id="pesan" placeholder="Sebutkan fitur yang diinginkan, deadline waktu, atau kendala spesifik yang sedang Anda alami..." required></textarea>
+                </div>
+                <button type="submit" class="send-button">Kirim Pesan Sekarang</button>
+            </form>
+            <div id="statusMessage" style="display: none; text-align: center; margin-top: 1rem; color: var(--primary-hover);"></div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Joki Andalang - Web Development & Solusi IT</p>
-        <p>Cepat, Profesional, Jernih (HD), dan Terpercaya</p>
+        <p style="font-weight: 700; color: #fff;">&copy; 2026 Joki Andalang</p>
+        <p>Advanced Web Development & Smart Academic Solutions</p>
     </footer>
 
-    <div id="imageModal" class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <span class="modal-prev modal-nav" onclick="changeImage(-1)">&#10094;</span>
-            <img id="modalImage" src="" alt="Portfolio Detail">
-            <span class="modal-next modal-nav" onclick="changeImage(1)">&#10095;</span>
-            <div class="modal-caption" id="modalCaption"></div>
+    <div id="imageModal" class="modal" style="display: none; position: fixed; z-index: 9999; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); padding: 2rem;">
+        <div class="modal-content" style="position: relative; max-width: 1000px; margin: auto; top: 50%; transform: translateY(-50%); text-align: center;">
+            <span class="modal-close" onclick="closeModal()" style="position: absolute; top: -40px; right: 0; color: #fff; font-size: 2.5rem; cursor: pointer;">&times;</span>
+            <span class="modal-prev modal-nav" onclick="changeImage(-1)" style="position: absolute; left: -50px; top: 45%; color: #fff; font-size: 2rem; cursor: pointer; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 50%;">&#10094;</span>
+            
+            <img id="modalImage" src="" alt="Portfolio Detail" style="width: 100%; border-radius: 12px; box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);">
+            
+            <span class="modal-next modal-nav" onclick="changeImage(1)" style="position: absolute; right: -50px; top: 45%; color: #fff; font-size: 2rem; cursor: pointer; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 50%;">&#10095;</span>
+            <div class="modal-caption" id="modalCaption" style="color: #fff; margin-top: 1rem; font-size: 1.2rem; font-weight: 600;"></div>
         </div>
     </div>
 
     <script>
         const portfolioImages = [
-            { src: '1.png', title: 'Penyewaan Alat Camping Honay', category: 'tech' },
-            { src: '2.png', title: 'Administrasi Kelurahan Sakti', category: 'tech' },
-            { src: '3.png', title: 'Pemesanan Jus Online', category: 'tech' },
-            { src: '4.png', title: 'Administrasi Pelayanan Surat Desa Bungapati', category: 'tech' },
-            { src: '5.png', title: 'Prediksi Jadwal Panen Kakao', category: 'tech' },
-            { src: '7.png', title: 'Wisata Kebun Anggur', category: 'tech' },
-            { src: '8.png', title: 'Wisata Yacht Club Sorowako', category: 'tech' }
+            { src: '1.png', title: 'Sistem Reservasi Alat Camping Honay', category: 'tech' },
+            { src: '2.png', title: 'Manajemen Administrasi Kelurahan Sakti', category: 'tech' },
+            { src: '3.png', title: 'Aplikasi E-Commerce Pemesanan Jus', category: 'tech' },
+            { src: '4.png', title: 'Portal E-Surat Desa Bungapati', category: 'tech' },
+            { src: '5.png', title: 'AI Prediksi Jadwal Panen Kakao', category: 'academic' },
+            { src: '7.png', title: 'Portal Pariwisata Kebun Anggur', category: 'tech' },
+            { src: '8.png', title: 'Company Profile Yacht Club Sorowako', category: 'tech' }
         ];
 
         let currentImageIndex = 0;
         let filteredImages = [...portfolioImages];
 
         document.addEventListener('DOMContentLoaded', function() {
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            portfolioItems.forEach((item) => {
-                item.addEventListener('click', function() {
-                    const category = item.getAttribute('data-category');
-                    if (category !== 'tech') return; 
-
-                    filteredImages = portfolioImages.filter(img => img.category === 'tech');
-                    const imgElement = item.querySelector('img');
-                    if(imgElement) {
-                        const imgSrc = imgElement.getAttribute('src');
-                        currentImageIndex = filteredImages.findIndex(img => img.src === imgSrc);
-                        if (currentImageIndex === -1) currentImageIndex = 0;
-                        openModal(currentImageIndex);
-                    }
-                });
-            });
-            
             filterPortfolio('all');
         });
-
-        function openModal(index) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const caption = document.getElementById('modalCaption');
-            
-            modal.classList.add('active');
-            modalImg.src = filteredImages[index].src;
-            caption.textContent = filteredImages[index].title;
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex >= filteredImages.length) currentImageIndex = 0;
-            if (currentImageIndex < 0) currentImageIndex = filteredImages.length - 1;
-            
-            document.getElementById('modalImage').src = filteredImages[currentImageIndex].src;
-            document.getElementById('modalCaption').textContent = filteredImages[currentImageIndex].title;
-        }
 
         function filterPortfolio(category) {
             const items = document.querySelectorAll('.portfolio-item');
@@ -1185,40 +832,58 @@
             
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'flex';
-                    item.style.animation = 'fadeInUp 0.6s ease forwards';
+                    item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
                 }
             });
+
+            // Update click events based on filter
+            items.forEach((item) => {
+                item.onclick = function() {
+                    const itemCat = item.getAttribute('data-category');
+                    filteredImages = category === 'all' ? portfolioImages : portfolioImages.filter(img => img.category === category);
+                    const imgSrc = item.querySelector('img').getAttribute('src');
+                    currentImageIndex = filteredImages.findIndex(img => img.src === imgSrc);
+                    openModal(currentImageIndex);
+                };
+            });
         }
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        function openModal(index) {
+            document.getElementById('imageModal').style.display = 'block';
+            document.getElementById('modalImage').src = filteredImages[index].src;
+            document.getElementById('modalCaption').textContent = filteredImages[index].title;
+            document.body.style.overflow = 'hidden';
+        }
 
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex >= filteredImages.length) currentImageIndex = 0;
+            if (currentImageIndex < 0) currentImageIndex = filteredImages.length - 1;
+            document.getElementById('modalImage').src = filteredImages[currentImageIndex].src;
+            document.getElementById('modalCaption').textContent = filteredImages[currentImageIndex].title;
+        }
+
+        // Form Submit
         document.getElementById('emailForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nama = document.getElementById('nama').value;
             const subjek = document.getElementById('subjek').value;
             const pesan = document.getElementById('pesan').value;
             
-            const emailBody = `Nama: ${nama}%0D%0A%0D%0APesan:%0D%0A${pesan}`;
+            const emailBody = `Halo Joki Andalang, saya ${nama}.%0D%0A%0D%0A${pesan}`;
             window.location.href = `mailto:jokiandalang3@gmail.com?subject=${encodeURIComponent(subjek)}&body=${emailBody}`;
             
-            const statusMessage = document.getElementById('statusMessage');
-            statusMessage.textContent = 'Membuka aplikasi email Anda...';
-            statusMessage.className = 'message success show';
-            
-            setTimeout(() => {
-                this.reset();
-                statusMessage.classList.remove('show');
-            }, 3000);
+            const statusMsg = document.getElementById('statusMessage');
+            statusMsg.style.display = 'block';
+            statusMsg.textContent = 'Membuka aplikasi email Anda...';
+            setTimeout(() => { statusMsg.style.display = 'none'; this.reset(); }, 4000);
         });
     </script>
 </body>

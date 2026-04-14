@@ -137,7 +137,7 @@
             width: 100%;
         }
 
-        /* Hero Section (Integrasi Brand Image & Glow) */
+        /* Hero Section */
         .hero {
             margin-top: 70px;
             padding: 12rem 2rem 10rem;
@@ -176,21 +176,23 @@
         }
 
         .hero-brand-image {
-            height: 70px; /* Menyesuaikan tinggi baris judul */
+            height: 70px; 
             width: auto;
             object-fit: contain;
             border-radius: 12px;
-            /* Efek Penyatuan Latar Belakang Gelap & Glow */
-            mix-blend-mode: screen; /* Penyatuan mulus dengan latar gelap */
-            filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6)); /* Glow Ungu Sekunder */
+            
+            /* Trik Ajaib CSS: Membuat gambar berlatar putih jadi transparan dan menyala biru */
+            filter: invert(1) hue-rotate(180deg) brightness(1.5) drop-shadow(0 0 15px rgba(14, 165, 233, 0.5));
+            mix-blend-mode: screen; 
+            
             opacity: 0.95;
             transition: all 0.4s ease;
-            margin-top: -5px; /* Sedikit penyesuaian vertikal */
+            margin-top: -5px; 
         }
 
         .hero-brand-image:hover {
             transform: scale(1.05);
-            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.8));
+            filter: invert(1) hue-rotate(180deg) brightness(1.8) drop-shadow(0 0 25px rgba(14, 165, 233, 0.8));
         }
 
         /* Gradient Teks Futuristik 2026 */
@@ -199,7 +201,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            text-shadow: none; /* Reset text shadow untuk gradient */
+            text-shadow: none; 
         }
 
         .hero p {
@@ -262,7 +264,7 @@
             background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
         }
 
-        /* Stats Section (Integrasi Glow Ungu Sekunder) */
+        /* Stats Section */
         .stats {
             max-width: 1050px;
             margin: 0 auto 5rem;
@@ -329,7 +331,7 @@
             font-size: 1.1rem;
         }
 
-        /* Services Section (Card Glow yang Ditingkatkan) */
+        /* Services Section */
         .services {
             max-width: 1200px;
             margin: 0 auto 5rem;
@@ -374,7 +376,6 @@
             box-shadow: var(--shadow-glass);
         }
 
-        /* Gradient & Glow Overlay pada Hover */
         .service-card::before {
             content: '';
             position: absolute;
@@ -391,7 +392,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.4), var(--shadow-glow-strong);
         }
 
-        /* Glow Border Halus pada Hover */
         .service-card:hover::after {
             content: '';
             position: absolute;
@@ -718,7 +718,7 @@
             font-size: 0.95rem;
         }
 
-        /* Modal / Lightbox (Modernized with Glow) */
+        /* Modal / Lightbox */
         .modal {
             display: none;
             position: fixed;

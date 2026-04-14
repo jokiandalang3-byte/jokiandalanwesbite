@@ -6,27 +6,23 @@
     <title>Joki Andalang - Solusi IT & Akademik Cerdas</title>
 
     <style>
-        /* --- CSS UTAMA: THEMA AI / CYBER TECH 2026 --- */
+        /* --- CSS UTAMA: TEMA AI / CYBER TECH 2026 --- */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
         :root {
-            /* Palette AI Modern */
             --primary-color: #06b6d4; 
             --primary-hover: #22d3ee;
             --secondary-color: #8b5cf6; 
             --accent-color: #f43f5e; 
             
-            /* Deep Dark Backgrounds */
             --bg-main: #030712; 
             --bg-card: rgba(15, 23, 42, 0.6); 
             --bg-glass: rgba(3, 7, 18, 0.85); 
             
-            /* Typography */
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --text-neon: #67e8f9;
             
-            /* Glow Effects */
             --border-color: rgba(255, 255, 255, 0.08);
             --shadow-glow-cyan: 0 0 25px rgba(6, 182, 212, 0.25);
             --shadow-glow-violet: 0 0 25px rgba(139, 92, 246, 0.25);
@@ -85,6 +81,8 @@
             align-items: center;
             gap: 0.8rem;
             letter-spacing: -0.5px;
+            /* Efek Neon Tipis di Navbar */
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); 
         }
 
         .nav-links {
@@ -126,23 +124,26 @@
             width: 100%;
         }
 
-        /* --- ANIMASI TEXT BRAND KEREN (JOKIANDALANG) --- */
+        /* --- PENGGANTI GAMBAR: ANIMASI TEXT BRAND KEREN (JOKIANDALANG) --- */
         .brand-text-hero {
             font-size: clamp(3rem, 8vw, 6.5rem);
             font-weight: 900;
             letter-spacing: -2px;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
+            
             /* Efek Gradient Dinamis */
             background: linear-gradient(to right, #06b6d4, #8b5cf6, #f43f5e, #06b6d4);
             background-size: 200% auto;
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
+            
             /* Glow Text */
-            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.4));
+            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+            
             /* Gabungan 2 Animasi: Muncul (Reveal) dan Warna Berjalan (Flow) */
-            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards, colorFlow 5s linear infinite;
+            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards, colorFlow 4s linear infinite;
         }
 
         @keyframes cyberReveal {
@@ -154,12 +155,13 @@
             100% { 
                 opacity: 1; 
                 transform: translateY(0) scale(1); 
-                filter: blur(0px) drop-shadow(0 0 20px rgba(139, 92, 246, 0.4));
+                filter: blur(0px) drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
             }
         }
 
         @keyframes colorFlow {
-            to { background-position: 200% center; }
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
         }
 
         .hero-title {
@@ -169,7 +171,7 @@
             color: #e2e8f0;
             letter-spacing: -0.5px;
             animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.2s forwards;
-            opacity: 0; /* Mulai dari tidak terlihat untuk animasi */
+            opacity: 0;
         }
 
         .hero p {
@@ -327,28 +329,12 @@
             align-items: flex-start;
         }
 
-        .service-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            padding: 2px;
-            background: linear-gradient(135deg, var(--primary-color), transparent, var(--secondary-color));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
         .service-card:hover {
             transform: translateY(-10px);
             background: rgba(15, 23, 42, 0.8);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5), var(--shadow-glow-cyan);
+            border-color: var(--primary-hover);
         }
-
-        .service-card:hover::after { opacity: 1; }
 
         .service-icon {
             font-size: 3.5rem;
@@ -430,7 +416,7 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all 0.4s ease;
-            cursor: pointer;
+            cursor: pointer; /* Indikator bisa diklik */
         }
 
         .portfolio-item:hover {
@@ -444,6 +430,28 @@
             height: 220px;
             overflow: hidden;
             position: relative;
+        }
+        
+        /* Overlay "Klik untuk Perbesar" */
+        .portfolio-image::after {
+            content: '🔍 Perbesar';
+            position: absolute;
+            inset: 0;
+            background: rgba(6, 182, 212, 0.4);
+            backdrop-filter: blur(3px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        
+        .portfolio-item:hover .portfolio-image::after {
+            opacity: 1;
         }
 
         .portfolio-image img {
@@ -520,7 +528,7 @@
 
         footer { text-align: center; padding: 3rem 1.5rem; color: var(--text-muted); border-top: 1px solid var(--border-color); background: rgba(3, 7, 18, 0.9); }
 
-        /* --- STYLING MODAL & TOMBOL X KEMBALI --- */
+        /* --- STYLING MODAL (GAMBAR DIPERBESAR) & TOMBOL KEMBALI --- */
         .modal {
             display: none;
             position: fixed;
@@ -529,6 +537,12 @@
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(15px);
             padding: 2rem;
+            animation: fadeInModal 0.3s ease forwards;
+        }
+        
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modal-content-wrapper {
@@ -548,18 +562,19 @@
             border-radius: 16px;
             box-shadow: 0 0 40px rgba(6, 182, 212, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: contain;
         }
 
-        /* Tombol X (Close) Baru - Super Jelas dan Moderen */
+        /* Tombol Kembali / Tutup (X) yang Jelas */
         .btn-close-modal {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
+            top: 25px;
+            right: 35px;
+            width: 55px;
+            height: 55px;
             background: var(--accent-color);
             color: white;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -574,8 +589,8 @@
 
         .btn-close-modal:hover {
             background: #e11d48;
-            transform: scale(1.15) rotate(90deg); /* Animasi putar saat disentuh */
-            box-shadow: 0 0 30px rgba(244, 63, 94, 0.8);
+            transform: scale(1.15) rotate(90deg); /* Animasi memutar saat disorot */
+            box-shadow: 0 0 30px rgba(244, 63, 94, 0.9);
         }
 
         .modal-nav {
@@ -610,8 +625,8 @@
             .nav-links { flex-wrap: wrap; justify-content: center; }
             .btn-close-modal { top: 15px; right: 15px; width: 45px; height: 45px; font-size: 1.8rem; }
             .modal-nav { width: 45px; height: 45px; font-size: 1.2rem; }
-            .modal-prev { left: 10px; }
-            .modal-next { right: 10px; }
+            .modal-prev { left: 5px; }
+            .modal-next { right: 5px; }
             .contact-button { width: 100%; justify-content: center; }
         }
     </style>
@@ -716,7 +731,7 @@
 
     <section id="portfolio" class="portfolio">
         <h2 class="section-title">Showcase Produk</h2>
-        <p class="section-subtitle">Beberapa mahakarya digital yang telah kami bangun dengan standar performa dan visual tingkat tinggi.</p>
+        <p class="section-subtitle">Beberapa mahakarya digital yang telah kami bangun dengan standar performa dan visual tingkat tinggi. (Klik gambar untuk memperbesar)</p>
         
         <div class="portfolio-tabs">
             <button class="tab-button active" onclick="filterPortfolio('all')">Semua Karya</button>
@@ -872,7 +887,7 @@
                 }
             });
 
-            // Update click events based on filter
+            // Update klik gambar agar sesuai dengan kategori yang sedang aktif
             items.forEach((item) => {
                 item.onclick = function() {
                     const itemCat = item.getAttribute('data-category');
@@ -888,12 +903,12 @@
             document.getElementById('imageModal').style.display = 'block';
             document.getElementById('modalImage').src = filteredImages[index].src;
             document.getElementById('modalCaption').textContent = filteredImages[index].title;
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Mencegah scrolling latar belakang saat gambar diperbesar
         }
 
         function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // Mengembalikan scrolling
         }
 
         function changeImage(direction) {
@@ -904,7 +919,7 @@
             document.getElementById('modalCaption').textContent = filteredImages[currentImageIndex].title;
         }
 
-        // Form Submit
+        // Form Submit Redirect ke Email Client
         document.getElementById('emailForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nama = document.getElementById('nama').value;
@@ -918,6 +933,13 @@
             statusMsg.style.display = 'block';
             statusMsg.textContent = 'Membuka aplikasi email Anda...';
             setTimeout(() => { statusMsg.style.display = 'none'; this.reset(); }, 4000);
+        });
+        
+        // Tutup modal jika mengklik di luar area gambar
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('modal-content-wrapper')) {
+                closeModal();
+            }
         });
     </script>
 </body>

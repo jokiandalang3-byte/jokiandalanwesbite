@@ -74,15 +74,17 @@
         }
 
         .logo {
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
-            font-weight: 800;
-            color: var(--text-main);
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            letter-spacing: -0.5px;
-            /* Efek Neon Tipis di Navbar */
-            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); 
+        }
+
+        /* Styling untuk Logo Gambar di Navbar */
+        .logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.4));
         }
 
         .nav-links {
@@ -124,44 +126,17 @@
             width: 100%;
         }
 
-        /* --- PENGGANTI GAMBAR: ANIMASI TEXT BRAND KEREN (JOKIANDALANG) --- */
-        .brand-text-hero {
-            font-size: clamp(3rem, 8vw, 6.5rem);
-            font-weight: 900;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            
-            /* Efek Gradient Dinamis */
-            background: linear-gradient(to right, #06b6d4, #8b5cf6, #f43f5e, #06b6d4);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            
-            /* Glow Text */
-            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
-            
-            /* Gabungan 2 Animasi: Muncul (Reveal) dan Warna Berjalan (Flow) */
-            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards, colorFlow 4s linear infinite;
-        }
-
         @keyframes cyberReveal {
             0% { 
                 opacity: 0; 
                 transform: translateY(40px) scale(0.85); 
-                filter: blur(12px) drop-shadow(0 0 0px rgba(139, 92, 246, 0));
+                filter: blur(12px);
             }
             100% { 
                 opacity: 1; 
                 transform: translateY(0) scale(1); 
-                filter: blur(0px) drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+                filter: blur(0px);
             }
-        }
-
-        @keyframes colorFlow {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
         }
 
         .hero-title {
@@ -170,8 +145,7 @@
             font-weight: 700;
             color: #e2e8f0;
             letter-spacing: -0.5px;
-            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.2s forwards;
-            opacity: 0;
+            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
         }
 
         .hero p {
@@ -181,7 +155,7 @@
             margin: 1.5rem auto 2.5rem;
             line-height: 1.8;
             font-weight: 400;
-            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.4s forwards;
+            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.2s forwards;
             opacity: 0;
         }
 
@@ -196,7 +170,7 @@
             gap: 1rem;
             flex-wrap: wrap;
             margin-bottom: 3.5rem;
-            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.6s forwards;
+            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.4s forwards;
             opacity: 0;
         }
 
@@ -233,7 +207,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.8s forwards;
+            animation: cyberReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) 0.6s forwards;
             opacity: 0;
         }
 
@@ -416,7 +390,7 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all 0.4s ease;
-            cursor: pointer; /* Indikator bisa diklik */
+            cursor: pointer;
         }
 
         .portfolio-item:hover {
@@ -448,6 +422,7 @@
             opacity: 0;
             transition: opacity 0.3s ease;
             z-index: 2;
+            pointer-events: none; /* PENTING: Mencegah teks overlay menahan klik */
         }
         
         .portfolio-item:hover .portfolio-image::after {
@@ -589,7 +564,7 @@
 
         .btn-close-modal:hover {
             background: #e11d48;
-            transform: scale(1.15) rotate(90deg); /* Animasi memutar saat disorot */
+            transform: scale(1.15) rotate(90deg);
             box-shadow: 0 0 30px rgba(244, 63, 94, 0.9);
         }
 
@@ -635,7 +610,7 @@
     <header>
         <nav>
             <div class="logo">
-                Joki Andalang
+                <img src="jokiandalang.png" alt="Logo Joki Andalang">
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -648,8 +623,6 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="brand-text-hero">JokiAndalang</div>
-
             <h1 class="hero-title">
                 Jasa Aplikasi Website & Skripsi Informatika
             </h1>
@@ -740,8 +713,7 @@
         </div>
 
         <div class="portfolio-grid" id="portfolioGrid">
-            
-            <div class="portfolio-item" data-category="tech">
+            <div class="portfolio-item" data-category="tech" onclick="openLightbox('1.png')">
                 <div class="portfolio-image"><img src="1.png" alt="Website Penyewaan Alat Camping Honay" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
                     <h3>Sistem Reservasi Alat Camping</h3>
@@ -749,7 +721,7 @@
                 </div>
             </div>
             
-            <div class="portfolio-item" data-category="tech">
+            <div class="portfolio-item" data-category="tech" onclick="openLightbox('2.png')">
                 <div class="portfolio-image"><img src="2.png" alt="Website Administrasi Kelurahan Sakti" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
                     <h3>Sistem Manajemen Administrasi</h3>
@@ -757,7 +729,7 @@
                 </div>
             </div>
             
-            <div class="portfolio-item" data-category="tech">
+            <div class="portfolio-item" data-category="tech" onclick="openLightbox('3.png')">
                 <div class="portfolio-image"><img src="3.png" alt="Website Pemesanan Jus" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
                     <h3>Aplikasi Pemesanan F&B</h3>
@@ -765,7 +737,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="tech">
+            <div class="portfolio-item" data-category="tech" onclick="openLightbox('4.png')">
                 <div class="portfolio-image"><img src="4.png" alt="Website Administrasi Pelayanan Surat Desa Bungapati" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
                     <h3>Portal Pelayanan Desa E-Surat</h3>
@@ -773,7 +745,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="academic">
+            <div class="portfolio-item" data-category="academic" onclick="openLightbox('5.png')">
                 <div class="portfolio-image"><img src="5.png" alt="Website Jadwal Panen Kakao" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
                     <h3>AI Prediksi Panen Kakao</h3>
@@ -781,7 +753,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="tech">
+            <div class="portfolio-item" data-category="tech" onclick="openLightbox('7.png')">
                 <div class="portfolio-image"><img src="7.png" alt="Website Wisata Kebun Anggur" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
                     <h3>Portal Pariwisata Interaktif</h3>
@@ -789,7 +761,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-item" data-category="tech">
+            <div class="portfolio-item" data-category="tech" onclick="openLightbox('8.png')">
                 <div class="portfolio-image"><img src="8.png" alt="Website Wisata Yacht Club Sorowako" onerror="this.style.display='none'"></div>
                 <div class="portfolio-info">
                     <h3>Company Profile Yacht Club</h3>
@@ -870,6 +842,7 @@
             filterPortfolio('all');
         });
 
+        // Filter kategori gambar
         function filterPortfolio(category) {
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.tab-button');
@@ -887,30 +860,31 @@
                 }
             });
 
-            // Update klik gambar agar sesuai dengan kategori yang sedang aktif
-            items.forEach((item) => {
-                item.onclick = function() {
-                    const itemCat = item.getAttribute('data-category');
-                    filteredImages = category === 'all' ? portfolioImages : portfolioImages.filter(img => img.category === category);
-                    const imgSrc = item.querySelector('img').getAttribute('src');
-                    currentImageIndex = filteredImages.findIndex(img => img.src === imgSrc);
-                    openModal(currentImageIndex);
-                };
-            });
+            // Update array gambar yang sedang aktif untuk navigasi modal (geser kiri-kanan)
+            filteredImages = category === 'all' ? [...portfolioImages] : portfolioImages.filter(img => img.category === category);
         }
 
-        function openModal(index) {
-            document.getElementById('imageModal').style.display = 'block';
-            document.getElementById('modalImage').src = filteredImages[index].src;
-            document.getElementById('modalCaption').textContent = filteredImages[index].title;
-            document.body.style.overflow = 'hidden'; // Mencegah scrolling latar belakang saat gambar diperbesar
+        // Fungsi klik untuk buka gambar yang sudah disederhanakan agar terjamin berhasil
+        function openLightbox(imageSrc) {
+            // Cari index gambar yang diklik di dalam array gambar yang sedang difilter
+            let index = filteredImages.findIndex(img => img.src === imageSrc);
+            
+            if(index !== -1) {
+                currentImageIndex = index;
+                document.getElementById('imageModal').style.display = 'block';
+                document.getElementById('modalImage').src = filteredImages[currentImageIndex].src;
+                document.getElementById('modalCaption').textContent = filteredImages[currentImageIndex].title;
+                document.body.style.overflow = 'hidden'; // Kunci scroll layar utama
+            }
         }
 
+        // Fungsi menutup gambar
         function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Mengembalikan scrolling
+            document.body.style.overflow = 'auto'; // Kembalikan scroll layar utama
         }
 
+        // Fungsi geser kiri kanan
         function changeImage(direction) {
             currentImageIndex += direction;
             if (currentImageIndex >= filteredImages.length) currentImageIndex = 0;
@@ -919,7 +893,7 @@
             document.getElementById('modalCaption').textContent = filteredImages[currentImageIndex].title;
         }
 
-        // Form Submit Redirect ke Email Client
+        // Form Submit
         document.getElementById('emailForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nama = document.getElementById('nama').value;
@@ -935,7 +909,7 @@
             setTimeout(() => { statusMsg.style.display = 'none'; this.reset(); }, 4000);
         });
         
-        // Tutup modal jika mengklik di luar area gambar
+        // Tutup modal jika klik background gelap di luar gambar
         document.getElementById('imageModal').addEventListener('click', function(e) {
             if (e.target === this || e.target.classList.contains('modal-content-wrapper')) {
                 closeModal();

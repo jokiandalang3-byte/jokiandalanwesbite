@@ -14,7 +14,6 @@
             --primary-color: #0ea5e9; 
             --primary-hover: #38bdf8;
             --secondary-color: #a855f7; /* Ungu neon untuk aksen futuristik */
-            --secondary-hover: #c084fc;
             --accent-color: #f87171; /* Merah muda neon halus untuk kontras */
             
             /* Latar Belakang Gelap Pekat (Deeper Slate/Navy) */
@@ -30,7 +29,6 @@
             /* Border & Bayangan Neon */
             --border-color: rgba(255, 255, 255, 0.05);
             --border-hover: rgba(14, 165, 233, 0.4);
-            --border-neon-secondary: rgba(168, 85, 247, 0.4);
             
             --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
             --shadow-glow: 0 0 15px rgba(14, 165, 233, 0.2);
@@ -140,10 +138,13 @@
         /* Hero Section */
         .hero {
             margin-top: 70px;
-            padding: 12rem 2rem 10rem;
+            padding: 10rem 2rem 8rem;
             text-align: center;
             position: relative;
             background: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero::before {
@@ -156,52 +157,45 @@
             opacity: 0.8;
         }
 
-        .hero h1 {
-            font-size: 3.8rem;
-            line-height: 1.15;
-            margin-bottom: 1.8rem;
-            font-weight: 800;
-            animation: fadeInUp 1s ease;
-            letter-spacing: -2.5px;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Integrasi Gambar Brand Joki Andalang di Judul */
-        .hero-brand-container {
+        /* Container Baru untuk Tata Letak Vertikal Gambar & Judul */
+        .hero-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            gap: 2.5rem; /* Jarak antara logo dan judul */
+            margin-bottom: 3.5rem; /* Jarak antara judul dan teks p */
         }
 
-        .hero-brand-image {
-            height: 70px; 
+        /* Gaya untuk Gambar Logo Besar yang Baru */
+        .hero-logo-large {
+            height: 250px; /* Ukuran besar sesuai keinginan */
             width: auto;
             object-fit: contain;
-            border-radius: 12px;
+            border-radius: 20px;
             
-            /* Trik Ajaib CSS: Membuat gambar berlatar putih jadi transparan dan menyala biru */
-            filter: invert(1) hue-rotate(180deg) brightness(1.5) drop-shadow(0 0 15px rgba(14, 165, 233, 0.5));
-            mix-blend-mode: screen; 
-            
-            opacity: 0.95;
+            /* Efek glowing drop-shadow yang mengikuti bentuk logo transparan */
+            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.6));
             transition: all 0.4s ease;
-            margin-top: -5px; 
         }
 
-        .hero-brand-image:hover {
-            transform: scale(1.05);
-            filter: invert(1) hue-rotate(180deg) brightness(1.8) drop-shadow(0 0 25px rgba(14, 165, 233, 0.8));
+        .hero-logo-large:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.8));
         }
 
-        /* Gradient Teks Futuristik 2026 */
-        .gradient-text {
+        /* Gaya untuk Judul Gradient */
+        .hero-title {
+            font-size: 3.8rem;
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -2.5px;
+            text-shadow: none; /* Hapus bayangan teks putih lama */
+            
+            /* Terapkan gradient ke seluruh teks judul */
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            text-shadow: none; 
         }
 
         .hero p {
@@ -819,17 +813,17 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .hero h1 { font-size: 3rem; }
-            .hero-brand-image { height: 55px; }
+            .hero-logo-large { height: 180px; }
+            .hero-title { font-size: 3rem; }
             .modal-prev { left: 10px; }
             .modal-next { right: 10px; }
             .modal-close { right: 10px; top: -50px; }
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 10rem 1.5rem 6rem; }
-            .hero h1 { font-size: 2.6rem; letter-spacing: -1.5px; }
-            .hero-brand-image { height: 45px; }
+            .hero { padding: 8rem 1.5rem 6rem; }
+            .hero-logo-large { height: 140px; }
+            .hero-title { font-size: 2.6rem; letter-spacing: -1.5px; }
             .stats {
                 transform: translateY(0);
                 margin: 2rem 1.5rem 4rem;
@@ -851,9 +845,9 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 2.1rem; letter-spacing: -1px; }
-            .hero-brand-image { height: 35px; margin-right: 0.5rem; }
-            .hero-brand-container { gap: 1rem; }
+            .hero-logo-large { height: 100px; }
+            .hero-title { font-size: 2.1rem; letter-spacing: -1px; }
+            .hero-content { gap: 1.5rem; }
             .stats-grid { grid-template-columns: 1fr; }
             .contact-methods { flex-direction: column; gap: 1rem; }
             .contact-button { justify-content: center; width: 100%; }
@@ -877,14 +871,16 @@
     </header>
 
     <section id="home" class="hero">
-        <h1 class="hero-brand-container">
-            Jasa Aplikasi Website
-            <br>
-            <span class="gradient-text">
-                <img src="jokiandalang.jpeg" alt="Joki Andalang Brand" class="hero-brand-image">
+        <div class="hero-content">
+            <img src="jokiandalang.png" alt="Logo Brand Joki Andalang" class="hero-logo-large">
+
+            <h1 class="hero-title">
+                Jasa Aplikasi Website
+                <br>
                 & Skripsi Informatika
-            </span>
-        </h1>
+            </h1>
+        </div>
+
         <p>Solusi profesional, jernih (HD), dan terpercaya untuk kebutuhan pengembangan teknologi dan akademik Anda.</p>
         <div class="service-badges">
             <span class="badge">🌐 Web Development</span>
